@@ -8,7 +8,8 @@
 
         /* コンテナ */
         .container {
-            width: 400px;
+            max-width: 100%;
+            width: 90%;
             margin: 0 auto;
             background-color: #fff;
             border-radius: 10px;
@@ -265,7 +266,7 @@
 }
 .tweet-modal-content {
     background: white;
-    width: 388px;
+    max-width: 95%;
     border-radius: 10px;
     padding: 20px;
     margin-top: -425px;
@@ -399,11 +400,12 @@ body.modal-open {
 @media (max-width: 320px) {
     .search-bar {
         font-size: 12px;
-        padding: 8px 10%;
+        padding: 10px 15%;
     }
     .search-container svg {
         width: 14px;
         height: 14px;
+        left: 5%;
     }
     .tweet-button {
         width: 50px;
