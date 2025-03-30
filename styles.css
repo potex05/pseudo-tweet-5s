@@ -395,3 +395,18 @@
 body.modal-open {
     overflow: hidden;
 }
+/* 4インチ画面向けの調整 */
+@media (max-width: 320px) {
+    .search-bar {
+        font-size: 12px;
+        padding: 8px 10%;
+    }
+    .search-container svg {
+        width: 14px;
+        height: 14px;
+    }
+    .tweet-button {
+        width: 50px;
+        height: 50px;
+    }
+}
