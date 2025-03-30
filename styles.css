@@ -8,8 +8,7 @@
 
         /* コンテナ */
         .container {
-            max-width: 400%;
-            width: 90%;
+            width: 400px;
             margin: 0 auto;
             background-color: #fff;
             border-radius: 10px;
@@ -266,7 +265,7 @@
 }
 .tweet-modal-content {
     background: white;
-    max-width: 95%;
+    width: 388px;
     border-radius: 10px;
     padding: 20px;
     margin-top: -330px;
@@ -396,30 +395,8 @@
 body.modal-open {
     overflow: hidden;
 }
-@media (max-width: 320px) {
-    .search-bar {
-        padding: 10px 20px;
-        font-size: 12px;
-    }
-
-    .navbar {
-        flex-wrap: wrap;
-    }
-
-    .navbar li {
-        font-size: 12px;
-        padding: 8px 3px;
-    }
-
-    .tweet-button {
-        width: 48px;
-        height: 48px;
-        bottom: 15px;
-        right: 15px;
-    }
-
-    .tweet-button svg {
-        width: 24px;
-        height: 24px;
+@media (max-width: 768px) {
+    .tweet-modal {
+        background-color: #fff !important;
     }
 }
