@@ -9,6 +9,8 @@
         /* コンテナ */
         .container {
             width: 400px;
+            max-width: 400px;
+            width: 90%;
             margin: 0 auto;
             background-color: #fff;
             border-radius: 10px;
@@ -398,5 +400,33 @@ body.modal-open {
 @media (max-width: 768px) {
     .tweet-modal {
         background-color: #fff !important;
+    }
+}
+/* iPhone 5s (320px) 以下の対応 */
+@media (max-width: 320px) {
+    .search-bar {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .navbar li {
+        font-size: 12px;
+        padding: 8px 3px;
+    }
+
+    .tweet-button {
+        width: 48px;
+        height: 48px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .tweet-button svg {
+        width: 24px;
+        height: 24px;
     }
 }
