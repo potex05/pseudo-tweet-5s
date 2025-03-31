@@ -1,4 +1,4 @@
-    document.addEventListener("DOMContentLoaded", function () {
+   /* document.addEventListener("DOMContentLoaded", function () {
         const trendHeader = document.querySelector(".trend-container h2");
 
         window.addEventListener("scroll", function () {
@@ -9,7 +9,7 @@
                 trendHeader.classList.remove("scrolled");
             }
         });
-    });
+    }); */
 
 document.querySelector(".tweet-button").addEventListener("click", function() {
     document.querySelector(".tweet-modal").style.display = "flex";
