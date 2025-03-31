@@ -1,4 +1,4 @@
-   document.addEventListener("DOMContentLoaded", function () {
+   /* document.addEventListener("DOMContentLoaded", function () {
         const trendHeader = document.querySelector(".trend-container h2");
 
         window.addEventListener("scroll", function () {
@@ -9,7 +9,7 @@
                 trendHeader.classList.remove("scrolled");
             }
         });
-    });
+    }); */
 
 document.querySelector(".tweet-button").addEventListener("click", function() {
     document.querySelector(".tweet-modal").style.display = "flex";
@@ -97,3 +97,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //日本のトレンド固定
+document.addEventListener("DOMContentLoaded", function () {
+    const trendHeader = document.querySelector(".trend-container h2");
+    const trendContainer = document.querySelector(".trend-container");
+    const observer = new IntersectionObserver(
+        ([e]) => {
+            if (!e.isIntersecting) {
+                trendHeader.classList.add("fixed");
+            } else {
+                trendHeader.classList.remove("fixed");
+            }
+        },
+        { root: null, threshold: 0, rootMargin: "0px" }
+    );
+
+    observer.observe(trendContainer);
+});
