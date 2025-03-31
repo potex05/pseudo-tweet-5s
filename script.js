@@ -99,17 +99,19 @@ document.addEventListener("DOMContentLoaded", function () {
 //日本のトレンド固定
 document.addEventListener("DOMContentLoaded", function () {
     const trendHeader = document.querySelector(".trend-container h2");
-    const headerOffset = trendHeader.offsetTop; // 初期位置を取得
+    const parentContainer = document.querySelector(".trend-container"); // 親要素を取得
+    const headerOffset = trendHeader.offsetTop; // h2 の元の位置
 
     window.addEventListener("scroll", function () {
-        if (window.scrollY >= headerOffset) {
-            trendHeader.classList.add("scrolled");
+        const headerRect = trendHeader.getBoundingClientRect();
+
+        if (headerRect.top <= 0) {
             trendHeader.style.position = "fixed";
             trendHeader.style.top = "0";
-            trendHeader.style.width = "100%"; // 必要なら幅を調整
+            trendHeader.style.width = "100%";
         } else {
-            trendHeader.classList.remove("scrolled");
-            trendHeader.style.position = "sticky";
+            trendHeader.style.position = "";
+            trendHeader.style.top = "";
         }
     });
 });
