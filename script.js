@@ -95,3 +95,21 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.remove("modal-open");
     });
 });
+
+//日本のトレンド固定
+document.addEventListener("DOMContentLoaded", function () {
+    const trendHeader = document.querySelector(".trend-container h2");
+    const headerOffset = trendHeader.offsetTop; // 初期位置を取得
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY >= headerOffset) {
+            trendHeader.classList.add("scrolled");
+            trendHeader.style.position = "fixed";
+            trendHeader.style.top = "0";
+            trendHeader.style.width = "100%"; // 必要なら幅を調整
+        } else {
+            trendHeader.classList.remove("scrolled");
+            trendHeader.style.position = "sticky";
+        }
+    });
+});
