@@ -395,17 +395,6 @@
 body.modal-open {
     overflow: hidden;
 }
-
-/* 追加 */
-.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    border-bottom: 1px solid #e1e8ed;
-    z-index: 10;
-}
 @media (max-width: 768px) {
     .tweet-modal {
         background-color: #fff !important;
