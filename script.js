@@ -103,13 +103,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const headerOffset = trendHeader.offsetTop; // h2 の元の位置
 
     window.addEventListener("scroll", function () {
-        const containerRect = parentContainer.getBoundingClientRect();
-        if (containerRect.top <= 0) {
+        const headerRect = trendHeader.getBoundingClientRect();
+
+        if (headerRect.top <= 0) {
             trendHeader.style.position = "fixed";
             trendHeader.style.top = "0";
             trendHeader.style.width = "100%";
         } else {
-            trendHeader.style.position = "sticky";
+            trendHeader.style.position = "";
             trendHeader.style.top = "";
         }
     });
