@@ -101,16 +101,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const trendHeader = document.querySelector(".trend-container h2");
     const parentContainer = document.querySelector(".trend-container"); // 親要素を取得
     const headerOffset = trendHeader.offsetTop; // h2 の元の位置
+    const headerHeight = trendHeader.offsetHeight; // h2 の高さを取得
+
+    parentContainer.style.paddingTop = headerHeight + "px"; // 事前にスペースを確保
 
     window.addEventListener("scroll", function () {
         const headerRect = trendHeader.getBoundingClientRect();
+        const parentRect = parentContainer.getBoundingClientRect();
 
-        if (headerRect.top <= 0) {
+        if (headerRect.top <= 0 && parentRect.top <= 0) {
             trendHeader.style.position = "fixed";
             trendHeader.style.top = "0";
             trendHeader.style.width = "100%";
+            trendHeader.style.zIndex = "1000"; // 最前面に
         } else {
-            trendHeader.style.position = "none";
+            trendHeader.style.position = "";
             trendHeader.style.top = "";
         }
     });
