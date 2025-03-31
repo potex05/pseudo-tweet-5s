@@ -113,7 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
             trendHeader.style.position = "fixed";
             trendHeader.style.top = "0";
             trendHeader.style.width = "100%";
-            trendHeader.style.zIndex = "1000"; // 最前面に
         } else {
             trendHeader.style.position = "";
             trendHeader.style.top = "";
