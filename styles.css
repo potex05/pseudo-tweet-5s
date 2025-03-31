@@ -136,6 +136,7 @@
             font-size: 18px;
             margin: 0px;
             color: #14171a;
+            position: -webkit-sticky; /* iPhone 5s の Safari 対応 */
             position: sticky;
             top: 0;
             background: white;
