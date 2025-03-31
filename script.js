@@ -1,4 +1,4 @@
-   /* document.addEventListener("DOMContentLoaded", function () {
+   document.addEventListener("DOMContentLoaded", function () {
         const trendHeader = document.querySelector(".trend-container h2");
 
         window.addEventListener("scroll", function () {
@@ -9,7 +9,7 @@
                 trendHeader.classList.remove("scrolled");
             }
         });
-    }); */
+    });
 
 document.querySelector(".tweet-button").addEventListener("click", function() {
     document.querySelector(".tweet-modal").style.display = "flex";
@@ -97,26 +97,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //日本のトレンド固定
-document.addEventListener("DOMContentLoaded", function () {
-    const trendHeader = document.querySelector(".trend-container h2");
-    const parentContainer = document.querySelector(".trend-container");
-    const headerOffset = trendHeader.offsetTop;
-    const headerHeight = trendHeader.offsetHeight; // h2 の高さを取得
-
-    parentContainer.style.paddingTop = headerHeight + "px"; // 事前にスペースを確保
-
-    window.addEventListener("scroll", function () {
-        const headerRect = trendHeader.getBoundingClientRect();
-        const parentRect = parentContainer.getBoundingClientRect();
-
-        if (headerRect.top <= 0 && parentRect.top <= 0) {
-            trendHeader.style.position = "fixed";
-            trendHeader.style.top = "0";
-            trendHeader.style.width = "100%";
-        } else {
-            trendHeader.style.position = "";
-            trendHeader.style.top = "";
-        }
-    });
-});
-
