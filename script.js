@@ -99,27 +99,17 @@ document.addEventListener("DOMContentLoaded", function () {
 //日本のトレンド固定
 document.addEventListener("DOMContentLoaded", function () {
     const trendHeader = document.querySelector(".trend-container h2");
-    const parentContainer = document.querySelector(".trend-container"); // 親要素を取得
-    const headerOffset = trendHeader.offsetTop; // h2 の元の位置
-    const headerHeight = trendHeader.offsetHeight; // h2 の高さを取得
-
-    // h2 が固定されたときのレイアウト崩れ防止のために、高さを確保
-    trendHeader.style.transition = "none"; // 瞬間移動を防ぐ
+    const headerOffset = trendHeader.offsetTop; // 初期位置を取得
 
     window.addEventListener("scroll", function () {
-        const headerRect = trendHeader.getBoundingClientRect();
-        const parentRect = parentContainer.getBoundingClientRect();
-
-        if (headerRect.top <= 0 && parentRect.top <= 0) {
+        if (window.scrollY >= headerOffset) {
+            trendHeader.classList.add("scrolled");
             trendHeader.style.position = "fixed";
             trendHeader.style.top = "0";
-            trendHeader.style.width = "100%";
-            trendHeader.style.zIndex = "1000"; // 最前面に
-            parentContainer.style.paddingTop = headerHeight + "px"; // 高さを保持してカクツキ防止
+            trendHeader.style.width = "100%"; // 必要なら幅を調整
         } else {
-            trendHeader.style.position = "";
-            trendHeader.style.top = "";
-            parentContainer.style.paddingTop = "0"; // 元に戻す
+            trendHeader.classList.remove("scrolled");
+            trendHeader.style.position = "sticky";
         }
     });
 });
