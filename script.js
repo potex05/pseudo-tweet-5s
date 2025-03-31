@@ -103,7 +103,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const headerOffset = trendHeader.offsetTop; // h2 の元の位置
     const headerHeight = trendHeader.offsetHeight; // h2 の高さを取得
 
-    parentContainer.style.paddingTop = headerHeight + "px"; // 事前にスペースを確保
+    // h2 が固定されたときのレイアウト崩れ防止のために、高さを確保
+    trendHeader.style.transition = "none"; // 瞬間移動を防ぐ
 
     window.addEventListener("scroll", function () {
         const headerRect = trendHeader.getBoundingClientRect();
@@ -114,9 +115,11 @@ document.addEventListener("DOMContentLoaded", function () {
             trendHeader.style.top = "0";
             trendHeader.style.width = "100%";
             trendHeader.style.zIndex = "1000"; // 最前面に
+            parentContainer.style.paddingTop = headerHeight + "px"; // 高さを保持してカクツキ防止
         } else {
             trendHeader.style.position = "";
             trendHeader.style.top = "";
+            parentContainer.style.paddingTop = "0"; // 元に戻す
         }
     });
 });
