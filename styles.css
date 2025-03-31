@@ -149,6 +149,15 @@
             border-top: 1px solid #e1e8ed;
             border-bottom: 1px solid #e1e8ed;
         }
+/* 既存のCSSに追加する形で追加 */
+h2 {
+  position: -webkit-sticky; /* Safari 対応 */
+  position: sticky;
+  top: 0; /* 上端に固定 */
+  z-index: 100; /* 他の要素より前面に表示 */
+  background-color: #fff; /* 背景色が透明だと見えなくなるので、背景色を指定 */
+  padding: 10px; /* 必要に応じて調整 */
+}
 
         .trend-container {
             position: relative;
