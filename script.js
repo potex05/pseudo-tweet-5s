@@ -99,22 +99,25 @@ document.addEventListener("DOMContentLoaded", function () {
 //日本のトレンド固定
 document.addEventListener("DOMContentLoaded", function () {
     const trendHeader = document.querySelector(".trend-container h2");
-    const parentContainer = document.querySelector(".trend-container"); // h2 の親要素
-    const headerOffset = trendHeader.offsetTop; // h2 の元の位置
+    const parentContainer = document.querySelector(".trend-container");
+    const headerOffset = trendHeader.offsetTop;
+    const headerHeight = trendHeader.offsetHeight; // h2 の高さを取得
+
+    parentContainer.style.paddingTop = headerHeight + "px"; // 事前にスペースを確保
 
     window.addEventListener("scroll", function () {
         const headerRect = trendHeader.getBoundingClientRect();
         const parentRect = parentContainer.getBoundingClientRect();
 
         if (headerRect.top <= 0 && parentRect.top <= 0) {
-            // 画面上端に達したら固定
             trendHeader.style.position = "fixed";
             trendHeader.style.top = "0";
             trendHeader.style.width = "100%";
+            trendHeader.style.zIndex = "1000"; // 最前面に
         } else {
-            // 元の位置に戻ったら固定解除
             trendHeader.style.position = "";
             trendHeader.style.top = "";
         }
     });
 });
+
